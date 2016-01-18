@@ -38,7 +38,9 @@ class DisqusExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'knp_disqus_render' => new \Twig_Function_Method($this, 'render', array('is_safe' => array('html'))),
+            'knp_disqus_render' => new \Twig_SimpleFunction('render', 
+              array($this,'render',array('is_safe' => array('html')))
+            ),
         );
     }
 
